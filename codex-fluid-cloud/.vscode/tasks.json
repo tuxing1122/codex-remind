@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Android: assemble debug APK",
+      "type": "shell",
+      "command": ".\\gradlew.bat",
+      "args": [":app:assembleDebug"],
+      "options": {
+        "cwd": "${workspaceFolder}\\android"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gradle"]
+    },
+    {
+      "label": "Windows: run watcher tests",
+      "type": "shell",
+      "command": "C:\\Users\\gmy15\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": ["-m", "unittest", "discover", "-s", "tests", "-v"],
+      "options": {
+        "cwd": "${workspaceFolder}\\windows"
+      },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Windows: start Codex watcher",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        ".\\start-watcher.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\windows"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

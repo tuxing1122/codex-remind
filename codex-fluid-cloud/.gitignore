@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+**/build/
+**/__pycache__/
+*.pyc
+*.log
+android/local.properties
+windows/config.local.json
+.env

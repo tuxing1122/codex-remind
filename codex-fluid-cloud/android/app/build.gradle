@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+def localConfig = rootProject.file('../windows/config.local.json')
+def localToken = localConfig.isFile() ? new groovy.json.JsonSlurper().parse(localConfig).token : null
+def bridgeToken = (project.findProperty('bridgeToken') ?: localToken ?: '').toString().trim()
+def escapedBridgeToken = bridgeToken.replace('\\', '\\\\').replace('"', '\\"')
+
+android {
+    namespace 'com.codex.fluidcloud'
+    compileSdk 36
+    buildToolsVersion '36.0.0'
+
+    defaultConfig {
+        applicationId 'com.codex.fluidcloud'
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        buildConfigField 'String', 'BRIDGE_TOKEN', '"' + escapedBridgeToken + '"'
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+if (bridgeToken.length() < 32 || bridgeToken == 'codex-fluid-change-me') {
+    throw new GradleException(
+            'A bridge token of at least 32 characters is required. Set windows/config.local.json or -PbridgeToken.')
+}
+
+dependencies {
+    compileOnly 'de.robv.android.xposed:api:82'
+    testImplementation 'junit:junit:4.13.2'
+}

@@ -1,0 +1,24 @@
+{
+  "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-17",
+  "java.import.gradle.java.home": "C:\\Program Files\\Java\\jdk-17",
+  "gradle.java.home": "C:\\Program Files\\Java\\jdk-17",
+  "gradle.home": "C:\\Users\\gmy15\\AppData\\Local\\Gradle\\gradle-8.11.1",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Java\\jdk-17",
+      "default": true
+    }
+  ],
+  "python.defaultInterpreterPath": "C:\\Users\\gmy15\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "terminal.integrated.env.windows": {
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk-17",
+    "ANDROID_HOME": "C:\\Users\\gmy15\\AppData\\Local\\Android\\Sdk",
+    "ANDROID_SDK_ROOT": "C:\\Users\\gmy15\\AppData\\Local\\Android\\Sdk"
+  },
+  "files.exclude": {
+    "**/.gradle": true,
+    "**/__pycache__": true,
+    "**/build": true
+  }
+}
