@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Claude Notify</string>
+    <string name="module_desc">实时推送Claude Code执行状态到流体云</string>
+</resources>

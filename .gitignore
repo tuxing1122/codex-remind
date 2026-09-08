@@ -1,0 +1,28 @@
+.gradle
+.idea
+*.iml
+local.properties
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+.cxx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+*.log
+
+# Windows
+*.exe
+*.dll
+*.pdb
+
+# Config
+config.local.json
+*.key
+*.pem

@@ -1,0 +1,6 @@
+{
+  "websocket_server": "ws://192.168.1.100:8765",
+  "monitor_path": "C:\\Users\\gmy15\\.claude",
+  "poll_interval": 1,
+  "log_level": "INFO"
+}
